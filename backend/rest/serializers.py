@@ -9,7 +9,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ["id", "expiration_date", "created_at", "name", "image", "product_id"]
+        fields = ["id", "expiration_date", "name", "image", "product_id"]
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
