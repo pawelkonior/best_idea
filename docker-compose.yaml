@@ -1,13 +1,15 @@
 services:
   db:
+    container_name: "postgresql"
     image: postgres:15.1
     volumes:
-      postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     env_file:
       - envs/db.env
     restart: on-failure
 
   backend:
+    container_name: "backend"
     build:
       context: ./backend
     volumes:
@@ -22,19 +24,17 @@ services:
       - db
     restart: on-failure
 
-  proxy:
-    container_name: proxy
-    build:
-      context: ./proxy
-    restart: on-failure
-    depends_on:
-      - backend
-      - frontend
-    networks:
-      - nginx-backend
-      - nginx-frontend
-    ports:
-      - "80:80"
+#  proxy:
+#    container_name: proxy
+#    build:
+#      context: ./proxy
+#    restart: on-failure
+#    depends_on:
+#      - backend
+#    networks:
+#      - nginx-backend
+#    ports:
+#      - "80:80"
 
 volumes:
     postgres_data:
