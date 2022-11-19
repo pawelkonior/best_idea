@@ -1,8 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { List } from "react-native-paper";
-import { AntDesign } from "@expo/vector-icons";
 import {Link} from "@react-navigation/native";
+
+import { AntDesign, Feather } from "@expo/vector-icons";
+
 
 function Home(props) {
     return (
