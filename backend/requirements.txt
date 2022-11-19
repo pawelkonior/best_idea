@@ -1,0 +1,17 @@
+asgiref==3.5.2
+attrs==22.1.0
+coverage==6.4.4
+dj-database-url==1.0.0
+Django==4.1
+django-environ==0.9.0
+iniconfig==1.1.1
+packaging==21.3
+pluggy==1.0.0
+psycopg2==2.9.3
+py==1.11.0
+pyparsing==3.0.9
+pytest==7.1.3
+pytest-cov==3.0.0
+pytest-django==4.5.2
+sqlparse==0.4.2
+tomli==2.0.1
