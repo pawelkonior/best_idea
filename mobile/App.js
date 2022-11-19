@@ -12,10 +12,21 @@ import Scanner from "./views/Scanner";
 import Maps from "./views/Maps";
 import Notifications from "./views/Notifications";
 
+import {useEffect, useRef, useState} from "react";
+
+import registerNNPushToken from 'native-notify';
+
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+    registerNNPushToken(4904, 'YHvvi2QDQiaM8FACwqGq43');
+    const [expoPushToken, setExpoPushToken] = useState('');
+    const [notification, setNotification] = useState(false);
+    const notificationListener = useRef();
+    const responseListener = useRef();
+
     return (
         <PaperProvider>
             <StatusBar style="auto"/>
@@ -46,8 +57,8 @@ export default function App() {
                     />
                     <Stack.Screen name="Profile" component={Profile}/>
                     <Stack.Screen name="Scanner" component={Scanner}/>
-                    <Stack.Screen name="Notifications" component={Notifications}/>
                     <Stack.Screen name="Maps" component={Maps}/>
+                    <Stack.Screen name="Notifications" component={Notifications}/>
 
                 </Stack.Navigator>
             </NavigationContainer>
