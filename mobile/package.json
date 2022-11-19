@@ -9,13 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-masked-view/masked-view": "^0.2.8",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.1",
     "@react-navigation/stack": "^6.3.4",
     "expo": "~47.0.6",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-gesture-handler": "~2.8.0",
-    "@react-native-masked-view/masked-view": "0.2.8"
+    "react-native-gesture-handler": "~2.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
