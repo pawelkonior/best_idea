@@ -2,12 +2,16 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { List } from "react-native-paper";
 import { AntDesign } from "@expo/vector-icons";
+import {Link} from "@react-navigation/native";
 
 function Home(props) {
     return (
         <View style={styles.container}>
             <View style={styles.addProductButton}>
-                <AntDesign name="pluscircleo" size={60} color="black" />
+                <Link style={styles.space} to={{screen: 'Scanner'}}>
+                    <AntDesign name="pluscircleo" size={60} color="black" />
+                </Link>
+
             </View>
             <View>
                 <List.Section>
@@ -34,7 +38,11 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginTop: 80,
         width: "100%",
+        justifyContent: "flex-start",
     },
+    space: {
+        margin: 10
+    }
 });
 
 export default Home;

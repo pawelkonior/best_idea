@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./views/Home";
 import Profile from "./views/Profile";
+import Scanner from "./views/Scanner";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ export default function App() {
                         }}
                     />
                     <Stack.Screen name="Profile" component={Profile} />
+                    <Stack.Screen name="Scanner" component={Scanner}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </PaperProvider>
