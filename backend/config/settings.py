@@ -13,13 +13,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
-import environ
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -27,14 +24,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJ_SECRET_KEY')
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DJ_DEBUG', False))
 
-ALLOWED_HOSTS = os.environ.get('DJ_ALLOWED_HOSTS', '').split()
+if DEBUG:
+    import os  # only if you haven't already imported this
+    import socket  # only if you haven't already imported this
 
+    hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1', '10.0.2.2']
 
-# Application definitio
+ALLOWED_HOSTS = os.environ['DJ_ALLOWED_HOSTS'].split()
+
+# Application definition
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -45,9 +47,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # 3rd party
+    "debug_toolbar",
+    "rest_framework",
+    "drf_yasg",
 
     # local
     "users.apps.UsersConfig",
+    "rest.apps.RestConfig"
 ]
 
 MIDDLEWARE = [
@@ -58,6 +64,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    "debug_toolbar.middleware.DebugToolbarMiddleware",  # The end of middleware
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -142,7 +150,6 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -158,3 +165,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.CustomUser"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
