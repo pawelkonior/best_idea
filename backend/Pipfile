@@ -10,8 +10,11 @@ dj-database-url="==1.0.0"
 psycopg2="==2.9.3"
 pytest-django="==4.5.2"
 pytest-cov="==3.0.0"
+drf-yasg = "*"
+django-debug-toolbar = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
 [requires]
-python_version="3.10"
+python_version="3.11"
