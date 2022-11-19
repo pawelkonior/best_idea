@@ -28,7 +28,6 @@ SECRET_KEY = os.environ.get('DJ_SECRET_KEY')
 DEBUG = int(os.environ.get('DJ_DEBUG', False))
 
 if DEBUG:
-    import os  # only if you haven't already imported this
     import socket  # only if you haven't already imported this
 
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
@@ -166,6 +165,9 @@ AUTH_USER_MODEL = "users.CustomUser"
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
