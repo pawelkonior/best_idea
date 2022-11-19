@@ -1,22 +1,26 @@
-import React from 'react';
-import {StyleSheet, Text, View} from "react-native";
-import {Link} from '@react-navigation/native';
-import { Button } from "react-native-paper";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { List } from "react-native-paper";
+import { AntDesign } from "@expo/vector-icons";
 
 function Home(props) {
     return (
         <View style={styles.container}>
-            <Text>Home</Text>
-            <Link to={{screen: 'Profile'}}>
-                Go to profile
-            </Link>
-            <Button
-                icon="camera"
-                mode="contained"
-                onPress={() => console.log("Pressed")}
-            >
-                Test React Native Paper by click me
-            </Button>
+            <View style={styles.addProductButton}>
+                <AntDesign name="pluscircleo" size={60} color="black" />
+            </View>
+            <View>
+                <List.Section>
+                    <List.Item
+                        title="First Item"
+                        description="Item description"
+                        left={(props) => <List.Icon {...props} icon="folder" />}
+                        right={() => (
+                            <AntDesign name="delete" size={20} color="black" />
+                        )}
+                    />
+                </List.Section>
+            </View>
         </View>
     );
 }
@@ -25,8 +29,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
+    },
+    addProductButton: {
         alignItems: "center",
-        justifyContent: "center",
+        marginTop: 80,
+        width: "100%",
     },
 });
 
