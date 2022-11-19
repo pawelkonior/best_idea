@@ -20,9 +20,10 @@ class Product(models.Model):
 
 
 class ProductDetail(models.Model):
-    id = models.PositiveIntegerField(primary_key=True, auto_created=False)
+    id = models.BigIntegerField(primary_key=True, auto_created=False)
     image = models.TextField(null=True)
     name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=False)
 
     def __repr__(self):
         return f"{self.name} - {self.id}"

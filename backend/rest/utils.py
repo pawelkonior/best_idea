@@ -21,4 +21,4 @@ def get_product_by_barcode(barcode):
     except AttributeError:
         return None
 
-    return {'name': title, 'price': price, 'image': img}
+    return {'barcode': barcode, 'name': title, 'price': price, 'image': img}
