@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
     # local
     "users.apps.UsersConfig",
+    "rest.apps.RestConfig"
 ]
 
 MIDDLEWARE = [
