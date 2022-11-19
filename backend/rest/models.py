@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Product(models.Model):
-    id = models.IntegerField(primary_key=True, auto_created=True)
     expiration_date = models.DateField(null=False)
     amount = models.PositiveSmallIntegerField(default=1)
 
@@ -25,17 +24,24 @@ class ProductDetail(models.Model):
     image = models.TextField(null=True)
     name = models.CharField(max_length=200)
 
+    def __repr__(self):
+        return f"{self.name} - {self.id}"
+
 
 class Usage(models.Model):
-    id = models.IntegerField(primary_key=True)
     usage_per_day = models.FloatField(default=0)
     product_detail = models.ForeignKey(ProductDetail, on_delete=models.DO_NOTHING)
     user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
     updated_at = models.DateField(auto_now=True)
 
+    def __repr__(self):
+        return f"{self.product_detail.name} usage {self.usage_per_day}"
+
 
 class ProductToBuy(models.Model):
-    id = models.IntegerField(primary_key=True)
     product = models.ForeignKey(ProductDetail, on_delete=models.DO_NOTHING)
     user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
     count = models.PositiveSmallIntegerField(default=0)
+
+    def __repr__(self):
+        return f"{self.product.name} - Amount: {self.count}"
