@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:15.1
+    volumes:
+      postgres_data:/var/lib/postgresql/data
+    env_file:
+      - envs/db.env
+    restart: on-failure
+
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/opt/app
+      - static_volume:/staticfiles
+      - media_volume:/media
+    ports:
+      - 8000:8000
+    env_file:
+      - envs/db.env
+    depends_on:
+      - db
+    restart: on-failure
+
+  proxy:
+    container_name: proxy
+    build:
+      context: ./proxy
+    restart: on-failure
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - nginx-backend
+      - nginx-frontend
+    ports:
+      - "80:80"
+
+volumes:
+    postgres_data:
+    static_volume:
+    media_volume:
+
+
+networks:
+  nginx-backend:
+    driver: bridge
+  backend-db:
+    driver: bridge
