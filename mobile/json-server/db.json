@@ -1,0 +1,11 @@
+{
+  "barcodes": [
+    {
+      "barcode": "123456789012",
+      "type": "EAN13",
+      "name": "Test",
+      "price": 1.99,
+      "id": 1
+    }
+  ]
+}
