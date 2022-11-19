@@ -28,6 +28,7 @@ urlpatterns = [
             name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path("admin/", admin.site.urls),
+    path("api/", include("rest.urls")),
 ]
 
 if settings.DEBUG:
