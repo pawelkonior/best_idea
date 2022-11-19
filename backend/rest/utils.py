@@ -1,5 +1,11 @@
+from decimal import Decimal
+
 import requests
 import bs4
+
+
+def cut_chars(string):
+    return ''.join(char for char in string if char.isdigit() or char == ',').replace(',', '.')
 
 
 def get_product_by_barcode(barcode):
@@ -21,4 +27,4 @@ def get_product_by_barcode(barcode):
     except AttributeError:
         return None
 
-    return {'barcode': barcode, 'name': title, 'price': price, 'image': img}
+    return {'id': barcode, 'name': title, 'price': cut_chars(price), 'image': img}
