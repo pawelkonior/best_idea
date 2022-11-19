@@ -16,7 +16,7 @@ class Product(models.Model):
 
 class ProductDetail(models.Model):
     id = models.PositiveIntegerField(primary_key=True, auto_created=False)
-    img = models.TextField(null=True)
+    image = models.TextField(null=True)
     name = models.CharField(max_length=200)
 
 
