@@ -2,6 +2,7 @@ from rest_framework.generics import ListAPIView
 from .serializers import ProductSerializer
 from .models import Product
 
+
 class ProductListAPIView(ListAPIView):
     serializer_class = ProductSerializer
 
