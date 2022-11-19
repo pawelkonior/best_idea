@@ -2,6 +2,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.core.exceptions import ValidationError
 from .serializers import ProductSerializer, ProductDetailSerializer
 from .models import Product, ProductDetail
 from .utils import get_product_by_barcode
@@ -23,7 +24,19 @@ class BarcodeAPIView(APIView):
         except ProductDetail.DoesNotExist:
             product = get_product_by_barcode(barcode)
             if product is not None:
-                return Response(product, status=status.HTTP_200_OK)
+
+                try:
+                    new_barcode = ProductDetail(
+                        id=barcode,
+                        image=product["image"],
+                        name=product["name"],
+                        price=''.join(char for char in product["price"]
+                                      if char.isdigit() or char == ',').replace(',', '.')
+                    )
+                    new_barcode.save()
+                except ValidationError:
+                    pass
+                finally:
+                    return Response(product, status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_404_NOT_FOUND)
-
