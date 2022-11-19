@@ -6,12 +6,10 @@ def get_product_by_barcode(barcode):
     base_url = 'https://www.leclerc.rzeszow.pl/'
     complex_url = f'{base_url}szukaj.html?slowo={barcode}'
 
-
-    r = requests.get(f'{base_url}szukaj.html?slowo={barcode}')
+    r = requests.get(complex_url)
     tag_soup = bs4.BeautifulSoup(r.text, 'html.parser')
 
     item_container = tag_soup.select_one('.kat_list')
-
 
     if not item_container:
         return None
@@ -24,4 +22,3 @@ def get_product_by_barcode(barcode):
         return None
 
     return {'name': title, 'price': price, 'image': img}
-
