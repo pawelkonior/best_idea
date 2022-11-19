@@ -2,16 +2,22 @@ from django.db import models
 
 
 class Product(models.Model):
-    id = models.IntegerField(primary_key=True)
-    expiration_date = models.DateField()
-    used = models.BooleanField(default=False)
+    id = models.IntegerField(primary_key=True, auto_created=True)
+    expiration_date = models.DateField(null=False)
+    amount = models.PositiveSmallIntegerField(default=1)
+
     to_sell = models.BooleanField(default=False)
-    sell_price = models.FloatField(default=0.0)
+    sell_amount = models.PositiveSmallIntegerField(default=0, blank=True)
+    sell_price = models.FloatField(default=0.0, blank=True)
+
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
     user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
     detail = models.ForeignKey("rest.ProductDetail", on_delete=models.DO_NOTHING)
+
+    class Meta:
+        unique_together = ("user", "detail", "expiration_date")
 
 
 class ProductDetail(models.Model):
