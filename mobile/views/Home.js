@@ -13,7 +13,6 @@ function Home(props) {
                 <Link style={styles.space} to={{screen: 'Scanner'}}>
                     <AntDesign name="pluscircleo" size={60} color="black" />
                 </Link>
-
             </View>
             <View>
                 <List.Section>
