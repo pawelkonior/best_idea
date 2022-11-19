@@ -25,7 +25,8 @@
     "react-native-paper": "^4.12.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "json-server": "^0.17.1"
   },
   "private": true
 }
