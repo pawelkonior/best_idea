@@ -1,6 +1,5 @@
 import "../partials/Card.scss";
 
-
 import salata from "../assets/salata.png";
 import timer from "../assets/timer.svg";
 
@@ -8,10 +7,7 @@ import timer from "../assets/timer.svg";
 function Card() {
     return (
         <>
-            <div className="header">
-                <div className="header-subtext">Twoje produkty</div>
-                <button className="add-button">+</button>
-            </div>
+
             <div className="product-card">
                 <div>
                     <img

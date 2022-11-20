@@ -1,28 +1,5 @@
 @import './variables';
 
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 0 1rem 1rem 1rem;
-
-    .add-button {
-        height: 42px;
-        width: 113px;
-        background: $color-main;
-        border-radius: 13px;
-        border: 0;
-        color: $white;
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .header-subtext {
-    }
-}
-
 .product-card {
     display: flex;
     background: $white;
