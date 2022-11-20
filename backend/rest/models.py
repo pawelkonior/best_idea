@@ -60,3 +60,9 @@ class ProductToBuy(models.Model):
 
     def __str__(self):
         return f"{self.product.name} - Amount: {self.count}"
+
+
+class CompostedProducts(models.Model):
+    detail = models.ForeignKey(ProductDetail, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
+    updated_at = models.DateField(auto_now=True)
