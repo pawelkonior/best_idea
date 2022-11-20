@@ -32,14 +32,16 @@ function MainView() {
         />)
     )
     return (
-        <>
+        <div style={{overflow: "scroll", height: "100vh"}}>
             <NavBar/>
             <AddProduct/>
-            <div style={{overflowY: "scroll"}}>
+            <div style={{
+                paddingBottom: "90px"
+            }}>
                 {cards}
             </div>
             <Footer/>
-        </>
+        </div>
     );
 }
 
