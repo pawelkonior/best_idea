@@ -49,7 +49,7 @@
     .product-image {
         width: 96px;
         height: 62px;
-        border: 1px solid black;
+        //border: 1px solid black;
         border-radius: 8px;
         /* Inside auto layout */
     }
@@ -86,10 +86,11 @@
 .btn-rel{
     position: absolute;
     top: calc(50% - 21px);
-    left: calc(50% - 56.5px);
+    left: calc(50% - 96px);
     cursor: pointer;
     z-index: 2137;
     transition: all 400ms ease-in-out;
+    min-width: 200px;
 }
 
 .btn-scan {

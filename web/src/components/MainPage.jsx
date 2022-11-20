@@ -36,7 +36,7 @@ function MainView() {
             <NavBar/>
             <AddProduct/>
             <div style={{
-                overflow: "scroll"
+                overflow: "scroll", height: "100%"
             }}>
                 {cards}
             </div>
