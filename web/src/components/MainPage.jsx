@@ -3,7 +3,10 @@ import "../partials/Card.scss";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Card from "./Card";
-import {Link} from "react-router-dom";
+import AddProduct from "./AddProduct";
+import {useEffect, useState} from "react";
+import {handleDataFromAPI} from "../request";
+
 
 function MainView() {
     const [products, setProducts] = useState([]);
@@ -29,19 +32,16 @@ function MainView() {
         />)
     )
     return (
-        <>
+        <div style={{overflow: "hidden", height: "100vh"}}>
             <NavBar/>
-            <Card/>
-            <div className="header">
-                <div className="header-subtext">Twoje produkty</div>
-                <Link to={'scan'}>
-                    <button className="add-button">+</button>
-                </Link>
-            </div>
-            {cards}
             <AddProduct/>
+            <div style={{
+                overflow: "scroll"
+            }}>
+                {cards}
+            </div>
             <Footer/>
-        </>
+        </div>
     );
 }
 
