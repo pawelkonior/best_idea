@@ -35,7 +35,9 @@ function MainView() {
         <div style={{overflow: "hidden", height: "100vh"}}>
             <NavBar/>
             <AddProduct/>
-            <div style={{overflowY: "scroll"}}>
+            <div style={{
+                overflow: "scroll"
+            }}>
                 {cards}
             </div>
             <Footer/>
