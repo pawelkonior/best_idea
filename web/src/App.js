@@ -3,7 +3,7 @@ import {
     Route,
 } from "react-router-dom";
 
-import SearchView from './components/SearchView/SearchView'
+import SearchView from './components/SearchView'
 
 function App() {
   return (

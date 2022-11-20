@@ -1,0 +1,49 @@
+.navbar {
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.navbar__header {
+  font-size: 28px;
+  font-weight: 700;
+}
+.header__paragraph {
+  color: #00966A;
+}
+
+.button {
+  border: 0;
+  background-color: white;
+}
+.button__icon {
+  width: 24px;
+  height: 26px;
+}
+
+.search {
+  padding-inline: 16px;
+  position: relative;
+}
+.search__input {
+  padding-inline: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  border-radius: 8px;
+  padding: 14px 21px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #9A9EA6;
+  border: 1px solid #9A9EA6;
+}
+.search__button {
+  border: 0;
+  background: transparent;
+  position: absolute;
+  right: 7%;
+  bottom: 25%;
+}
+
+/*# sourceMappingURL=style.css.map */
