@@ -1,0 +1,33 @@
+@import "variables";
+
+.search {
+  padding-inline: 16px;
+  position: relative;
+
+  &__label {
+
+  }
+
+  &__input {
+    //position: relative;
+    padding-inline: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 48px;
+    border-radius: 8px;
+    padding: 14px 21px;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: $gray-cement;
+    border: 1px solid $gray-cement;
+  }
+
+  &__button {
+    border: 0;
+    background: transparent;
+    position: absolute;
+    right: 7%;
+    bottom: 25%;
+  }
+}
