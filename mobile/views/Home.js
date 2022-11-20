@@ -25,7 +25,7 @@ function Home(props) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axiosContext.authAxios.get('/products')
+        axiosContext.authAxios.get('/products/')
             .then((response) => {
                 setProducts(response.data);
             })
