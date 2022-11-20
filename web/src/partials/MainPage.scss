@@ -24,6 +24,17 @@
     }
 }
 
+.btn {
+    height: 42px;
+    width: 113px;
+    background: #00966a;
+    border-radius: 13.2343px;
+    border: 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .product-card {
     display: flex;
     flex-direction: row;
@@ -66,4 +77,16 @@
             color: $gray-cement;
         }
     }
+}
+
+.scanner{
+    position: relative;
+}
+
+.btn-rel{
+    position: absolute;
+    top: calc(50% - 21px);
+    left: calc(50% - 56.5px);
+    cursor: pointer;
+    z-index: 2137;
 }

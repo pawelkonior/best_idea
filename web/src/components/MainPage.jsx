@@ -5,6 +5,7 @@ import timer from "../assets/timer.svg";
 
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import {Link} from "react-router-dom";
 
 function MainView() {
     return (
@@ -12,7 +13,7 @@ function MainView() {
             <NavBar/>
             <div className="header">
                 <div className="header-subtext">Twoje produkty</div>
-                <button className="add-button">+</button>
+                <Link to={'scan'}><button className="add-button">+</button></Link>
             </div>
             <div className="product-card">
                 <div>
