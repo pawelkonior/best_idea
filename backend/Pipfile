@@ -16,6 +16,8 @@ djangorestframework = "*"
 djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
 bs4 = "*"
 lxml = "*"
+django-redis = "==5.2.0"
+redis = "*"
 
 [dev-packages]
 

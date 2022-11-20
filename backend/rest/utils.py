@@ -6,6 +6,10 @@ import bs4
 from rest.models import Usage
 
 
+def cut_chars(string):
+    return ''.join(char for char in string if char.isdigit() or char == ',').replace(',', '.')
+
+
 def get_product_by_barcode(barcode):
     base_url = 'https://www.leclerc.rzeszow.pl/'
     complex_url = f'{base_url}szukaj.html?slowo={barcode}'
@@ -25,7 +29,7 @@ def get_product_by_barcode(barcode):
     except AttributeError:
         return None
 
-    return {'name': title, 'price': price, 'image': img}
+    return {'id': barcode, 'name': title, 'price': cut_chars(price), 'image': img}
 
 
 def update_usage(current_usage: Usage, time: timedelta, amount_change: float):

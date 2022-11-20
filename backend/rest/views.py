@@ -5,7 +5,9 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from django.core.exceptions import ValidationError
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from .serializers import ProductSerializer, ProductDetailSerializer
 from .models import Product, ProductDetail, Usage
 from .utils import get_product_by_barcode, update_usage
@@ -51,6 +53,8 @@ class ProductViewSet(ModelViewSet):
 
 
 class BarcodeAPIView(APIView):
+
+    @method_decorator(cache_page(60 * 60 * 24))
     def get(self, request, barcode):
 
         try:
@@ -59,6 +63,19 @@ class BarcodeAPIView(APIView):
         except ProductDetail.DoesNotExist:
             product = get_product_by_barcode(barcode)
             if product is not None:
-                return Response(product, status=status.HTTP_200_OK)
+
+                try:
+                    new_barcode = ProductDetail(
+                        id=barcode,
+                        image=product["image"],
+                        name=product["name"],
+                        price=''.join(char for char in product["price"]
+                                      if char.isdigit() or char == ',').replace(',', '.')
+                    )
+                    new_barcode.save()
+                except ValidationError:
+                    pass
+                finally:
+                    return Response(product, status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_404_NOT_FOUND)
