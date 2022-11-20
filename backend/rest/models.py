@@ -18,24 +18,31 @@ class Product(models.Model):
     class Meta:
         unique_together = ("user", "detail", "expiration_date")
 
+    def __str__(self):
+        return f"{self.detail.name} - exp: {self.expiration_date} - qty: {self.amount}"
+
 
 class ProductDetail(models.Model):
     id = models.PositiveIntegerField(primary_key=True, auto_created=False)
     image = models.TextField(null=True)
     name = models.CharField(max_length=200)
 
-    def __repr__(self):
+    def __str__(self):
         return f"{self.name} - {self.id}"
 
 
 class Usage(models.Model):
-    usage_per_day = models.FloatField(default=0)
+    coefficient = models.FloatField(default=0)
+    weight = models.IntegerField(default=0)
     product_detail = models.ForeignKey(ProductDetail, on_delete=models.DO_NOTHING)
     user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
     updated_at = models.DateField(auto_now=True)
 
-    def __repr__(self):
-        return f"{self.product_detail.name} usage {self.usage_per_day}"
+    def __str__(self):
+        return f"{self.product_detail.name} usage {self.coefficient}"
+
+    class Meta:
+        unique_together = ("product_detail", "user")
 
 
 class ProductToBuy(models.Model):
@@ -43,5 +50,5 @@ class ProductToBuy(models.Model):
     user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
     count = models.PositiveSmallIntegerField(default=0)
 
-    def __repr__(self):
+    def __str__(self):
         return f"{self.product.name} - Amount: {self.count}"

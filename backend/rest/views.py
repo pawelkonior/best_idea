@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import get_object_or_404
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
@@ -5,15 +7,38 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from .serializers import ProductSerializer, ProductDetailSerializer
-from .models import Product, ProductDetail
-from .utils import get_product_by_barcode
+from .models import Product, ProductDetail, Usage
+from .utils import get_product_by_barcode, update_usage
 
 
 class ProductViewSet(ModelViewSet):
     serializer_class = ProductSerializer
+    model = Product
 
     def get_queryset(self):
-        return Product.objects.filter(user=self.request.user)
+        return self.model.objects.filter(user=self.request.user)
+
+    def update_usage(self, request):
+        if "amount" not in request.data:
+            return
+        product = self.get_object()
+
+        amount_change = product.amount - request.data["amount"]
+        if amount_change < 0:
+            return
+
+        time_delta = datetime.date.today() - product.updated_at
+        usage, created = Usage.objects.get_or_create(user=self.request.user, product_detail=product.detail)
+
+        update_usage(usage, time_delta, amount_change)
+
+    def update(self, request, *args, **kwargs):
+        self.update_usage(request)
+        return super().update(request, *args, **kwargs)
+
+    def partial_update(self, request, *args, **kwargs):
+        self.update_usage(request)
+        return super().partial_update(request, *args, **kwargs)
 
     def create(self, *args, **kwargs):
         detail = get_object_or_404(ProductDetail, pk=self.request.data["product_id"])

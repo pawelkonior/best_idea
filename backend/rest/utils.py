@@ -1,5 +1,9 @@
+from datetime import timedelta
+
 import requests
 import bs4
+
+from rest.models import Usage
 
 
 def get_product_by_barcode(barcode):
@@ -22,3 +26,14 @@ def get_product_by_barcode(barcode):
         return None
 
     return {'name': title, 'price': price, 'image': img}
+
+
+def update_usage(current_usage: Usage, time: timedelta, amount_change: float):
+    """
+    Given current usage and change of product amount and time over which change happened, calculates new estimated usage.
+    """
+    days = time.days
+    new_coefficient = amount_change / days
+    current_usage.coefficient = ((current_usage.coefficient * current_usage.weight) + new_coefficient) / (current_usage.weight + 1)
+    current_usage.weight += 1
+    current_usage.save()
