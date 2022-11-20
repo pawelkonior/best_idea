@@ -6,7 +6,6 @@ import timer from "../assets/timer.svg";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Card from "./Card";
-import AddProduct from "./AddProduct";
 import {Link} from "react-router-dom";
 
 
@@ -14,7 +13,6 @@ function MainView() {
     return (
         <>
             <NavBar/>
-            <AddProduct/>
             <Card/>
             <div className="header">
                 <div className="header-subtext">Twoje produkty</div>
