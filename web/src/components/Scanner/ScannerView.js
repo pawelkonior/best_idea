@@ -37,7 +37,7 @@ const ScannerView = () => {
         <div>
             <NavBar/>
             <div className="scanner">
-                <button className="btn btn-rel"
+                <button className={scanning ? "btn btn-rel btn-scan" : "btn btn-rel"}
                         onClick={() => setScanning(!scanning)}>{scanning ? 'Stop scan' : 'Start scan'}</button>
 
                 <div ref={scannerRef}
