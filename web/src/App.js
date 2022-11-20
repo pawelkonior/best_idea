@@ -1,10 +1,20 @@
-import Scanner from "./components/Scanner/Scanner";
+import {
+    Routes,
+    Route,
+} from "react-router-dom";
+
+import SearchView from './components/SearchView/SearchView'
+import ScannerView from "./components/Scanner/ScannerView";
 
 function App() {
     return (
-        <div>
-            <Scanner/>
-        </div>
+        <>
+            <Routes>
+                <Route path={"/"} element={<div>home</div>}/>
+                <Route path={"/search"} element={<SearchView/>}/>
+                <Route path={"/scan"} element={<ScannerView/>}/>
+            </Routes>
+        </>
     );
 }
 
