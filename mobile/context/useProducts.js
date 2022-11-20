@@ -1,13 +1,20 @@
 import {createContext, useEffect, useState} from "react";
-import axios from "../api/axios";
+import {handleDataFromAPI} from "../api/request";
 
 const ProductsContext = createContext({});
 
 export const ProductsProvider = ({children}) => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState( []);
 
     useEffect(() => {
-        axios.get()
+        handleDataFromAPI({endpoint: "products"})
+            .then((data) => {
+                console.log(data);
+                setProducts(data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
 
     }, []);
 
@@ -17,5 +24,6 @@ export const ProductsProvider = ({children}) => {
         </ProductsContext.Provider>
     );
 }
+
 
 export default ProductsContext;

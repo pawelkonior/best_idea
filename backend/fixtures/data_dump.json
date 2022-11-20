@@ -1,0 +1,1096 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2022-11-20T00:23:39.212Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "1",
+      "object_repr": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg - exp: 2022-11-30 - qty: 30",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2022-11-20T00:23:56.355Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg - exp: 2022-11-29 - qty: 5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2022-11-20T00:24:11.302Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg - exp: 2022-12-29 - qty: 10",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2022-11-20T00:24:28.524Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg usage 1.0",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2022-11-20T01:33:13.473Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Oliwier",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2022-11-20T01:33:40.249Z",
+      "user": 1,
+      "content_type": 6,
+      "object_id": "5",
+      "object_repr": "Oliwier",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2022-11-20T01:34:11.515Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "2",
+      "object_repr": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg - exp: 2022-12-14 - qty: 3",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Expiration date\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2022-11-20T01:34:17.434Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "3",
+      "object_repr": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg - exp: 2022-12-29 - qty: 1",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2022-11-20T01:34:54.904Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Łaciate Mleko UHT 2,0 % 1 l\" - exp: 2022-11-22 - qty: 3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2022-11-20T01:35:10.364Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Łaciate Mleko UHT 2,0 % 1 l\" - exp: 2022-11-24 - qty: 2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2022-11-20T01:35:44.735Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "Mlekovita Śmietana z Trzebowniska 18% 380 g - exp: 2022-12-22 - qty: 2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2022-11-20T01:36:16.911Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "Mlekovita Śmietana z Trzebowniska 18% 380 g - exp: 2022-11-22 - qty: 2",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Expiration date\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2022-11-20T01:36:48.170Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "7",
+      "object_repr": "Bakoma Jogurt naturalny gęsty 150 g - exp: 2022-11-26 - qty: 2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2022-11-20T01:37:01.373Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "8",
+      "object_repr": "Bakoma Jogurt naturalny gęsty 150 g - exp: 2022-11-27 - qty: 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2022-11-20T01:37:28.201Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "Łaciate Mleko UHT 2,0 % 1 l\" usage 1.5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2022-11-20T01:39:17.641Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "Bakoma Jogurt naturalny gęsty 150 g usage 0.5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2022-11-20T01:39:33.117Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "Mlekovita Śmietana z Trzebowniska 18% 380 g usage 0.73",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2022-11-20T01:41:26.121Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "Mlekovita Śmietana z Trzebowniska 18% 380 g - exp: 2022-11-23 - qty: 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2022-11-20T01:41:36.025Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "Mlekovita Śmietana z Trzebowniska 18% 380 g - exp: 2022-11-26 - qty: 1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Expiration date\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2022-11-20T01:42:19.222Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "Agnesi Tagliatelle Paglia & Fieno Makaron jajeczny i makaron jajeczny ze szpinakiem 250 g - exp: 2022-11-23 - qty: 1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2022-11-20T01:42:38.303Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "10",
+      "object_repr": "Agnesi Tagliatelle Paglia & Fieno Makaron jajeczny i makaron jajeczny ze szpinakiem 250 g - exp: 2022-11-23 - qty: 1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Sell price\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 6,
+      "codename": "add_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 6,
+      "codename": "change_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 6,
+      "codename": "delete_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 6,
+      "codename": "view_customuser"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add product detail",
+      "content_type": 7,
+      "codename": "add_productdetail"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change product detail",
+      "content_type": 7,
+      "codename": "change_productdetail"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete product detail",
+      "content_type": 7,
+      "codename": "delete_productdetail"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view product detail",
+      "content_type": 7,
+      "codename": "view_productdetail"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add usage",
+      "content_type": 8,
+      "codename": "add_usage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change usage",
+      "content_type": 8,
+      "codename": "change_usage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete usage",
+      "content_type": 8,
+      "codename": "delete_usage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view usage",
+      "content_type": 8,
+      "codename": "view_usage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add product to buy",
+      "content_type": 9,
+      "codename": "add_producttobuy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change product to buy",
+      "content_type": 9,
+      "codename": "change_producttobuy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete product to buy",
+      "content_type": 9,
+      "codename": "delete_producttobuy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view product to buy",
+      "content_type": 9,
+      "codename": "view_producttobuy"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add product",
+      "content_type": 10,
+      "codename": "add_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change product",
+      "content_type": 10,
+      "codename": "change_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete product",
+      "content_type": 10,
+      "codename": "delete_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view product",
+      "content_type": 10,
+      "codename": "view_product"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "users",
+      "model": "customuser"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "rest",
+      "model": "productdetail"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "rest",
+      "model": "usage"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "rest",
+      "model": "producttobuy"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "rest",
+      "model": "product"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "qh7128dnvel0bq7v7msis8v00ru7i16z",
+    "fields": {
+      "session_data": ".eJxVjMsKgzAURP8l6xLMw1zssvt-Q7gvq22JYHQl_fcquGhhVnPOzGYyrsuQ16pzHsVcjTOX346QX1oOIE8sj8nyVJZ5JHso9qTV3ifR9-10_w4GrMO-Zg-KQhAwinMszEkCOQJsMLYeQlKvfcdhTwDQtm80dj0lAmhDiubzBQqJOGA:1owY73:CUiGlbftDYY51YeC7pKCXfILwE_Qewo7rGowSPtGCw4",
+      "expire_date": "2022-12-04T00:23:09.996Z"
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$2EPZXf2XFhste7y4wkIxvc$tRJobDPIPuHRvbpUVAC2WVAmToSoxB6UcGSqLfDYc04=",
+      "last_login": "2022-11-20T00:23:09.985Z",
+      "is_superuser": true,
+      "username": "aa",
+      "first_name": "",
+      "last_name": "",
+      "email": "aa@aa.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-11-20T00:13:17.223Z",
+      "longitude": 0.0,
+      "latitude": 0.0,
+      "shopping_frequency": 7,
+      "avatar": "https://slack-infra-latency.slack.com/avatarsource/TL513E005-UKTJEKSKD-7286d596ec95-128",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 5,
+    "fields": {
+      "password": "testPass123",
+      "last_login": "2022-11-20T01:33:11Z",
+      "is_superuser": true,
+      "username": "Oliwier",
+      "first_name": "Oliwier",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-11-20T01:32:32Z",
+      "longitude": 0.0,
+      "latitude": 0.0,
+      "shopping_frequency": 14,
+      "avatar": "https://slack-infra-latency.slack.com/avatarsource/TL513E005-UKTJEKSKD-7286d596ec95-128",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 1,
+    "fields": {
+      "expiration_date": "2022-11-30",
+      "amount": 2,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900766000076
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 2,
+    "fields": {
+      "expiration_date": "2022-12-14",
+      "amount": 3,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900766000076
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 3,
+    "fields": {
+      "expiration_date": "2022-12-29",
+      "amount": 1,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900766000076
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 4,
+    "fields": {
+      "expiration_date": "2022-11-22",
+      "amount": 3,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900820000042
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 5,
+    "fields": {
+      "expiration_date": "2022-11-24",
+      "amount": 2,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900820000042
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 6,
+    "fields": {
+      "expiration_date": "2022-11-22",
+      "amount": 2,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5902901001269
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 7,
+    "fields": {
+      "expiration_date": "2022-11-26",
+      "amount": 2,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900197000034
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 8,
+    "fields": {
+      "expiration_date": "2022-11-27",
+      "amount": 1,
+      "to_sell": false,
+      "sell_amount": 0,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 1,
+      "detail": 5900197000034
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 9,
+    "fields": {
+      "expiration_date": "2022-11-26",
+      "amount": 1,
+      "to_sell": true,
+      "sell_amount": 1,
+      "sell_price": 0.2,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 5,
+      "detail": 5902901001269
+    }
+  },
+  {
+    "model": "rest.product",
+    "pk": 10,
+    "fields": {
+      "expiration_date": "2022-11-23",
+      "amount": 1,
+      "to_sell": true,
+      "sell_amount": 1,
+      "sell_price": 0.0,
+      "created_at": "2022-11-20",
+      "updated_at": "2022-11-20",
+      "user": 5,
+      "detail": 8001200045992
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 3450970072311,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=170/3450970072311.jpg&x=170&y=170",
+      "name": "€.C.O.+ ORZECHY PISTACJOWE SMAZONE SOLONE 200g",
+      "price": "12.37"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 4001954160266,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=187/4001954160266_T1.jpg&x=170&y=170",
+      "name": "Kerrygold Tradycyjne masło irlandzkie 200 g",
+      "price": "8.99"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 4002039703101,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=157/4002039703101_T1.jpg&x=170&y=170",
+      "name": "Bell Szynka Schwarzwälder 80 g",
+      "price": "7.99"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900197000034,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=136/5900197000034_T1.jpg&x=170&y=170",
+      "name": "Bakoma Jogurt naturalny gęsty 150 g",
+      "price": "1.29"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900334008206,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=135/5900334008206_T1.jpg&x=170&y=170",
+      "name": "Tiger Energy Drink Classic Gazowany napój energetyzujący 250 ml",
+      "price": "2.28"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900352015040,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=177/5900352015040_T1.jpg&x=170&y=170",
+      "name": "AKUKU! Vege Żelko-pianki lodove 75 g",
+      "price": "3.33"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900512990705,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=160/5900512990705_T1.jpg&x=170&y=170",
+      "name": "Mlekovita Masło klarowane 250 g",
+      "price": "16.88"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900552032373,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=149/5900552032373_T1.jpg&x=170&y=170",
+      "name": "Black Energy Mojito Gazowany napój energetyzujący 250 ml",
+      "price": "2.29"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900552057338,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=165/5900552057338_T1.jpg&x=170&y=170",
+      "name": "4Move Professional Napój niegazowany o smaku pomarańczowym 0,75 l\"",
+      "price": "2.07"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900766000076,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=136/5900766000076_T1.jpg&x=170&y=170",
+      "name": "Polskie Młyny Mąka Szymanowska Uniwersalna pszenna typ 480 1 kg",
+      "price": "3.89"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5900820000042,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=3/5900820000042_T1.jpg&x=170&y=170",
+      "name": "Łaciate Mleko UHT 2,0 % 1 l\"",
+      "price": "3.99"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5902899140766,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=168/5902899140766_T1.jpg&x=170&y=170",
+      "name": "Hochland Ser żółty Tylżycki w plastrach 135 g",
+      "price": "6.35"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5902901001269,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=137/brand_18835_1.jpg&x=170&y=170",
+      "name": "Mlekovita Śmietana z Trzebowniska 18% 380 g",
+      "price": "4.59"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 5907637329670,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=170/5907637329670.jpg&x=170&y=170",
+      "name": "€.C.O.+ Migdały łuskane 300g",
+      "price": "13.85"
+    }
+  },
+  {
+    "model": "rest.productdetail",
+    "pk": 8001200045992,
+    "fields": {
+      "image": "https://www.leclerc.rzeszow.pl//resize.php?pic=183/8001200045992_T1.jpg&x=170&y=170",
+      "name": "Agnesi Tagliatelle Paglia & Fieno Makaron jajeczny i makaron jajeczny ze szpinakiem 250 g",
+      "price": "6.47"
+    }
+  },
+  {
+    "model": "rest.usage",
+    "pk": 1,
+    "fields": {
+      "coefficient": 1.0,
+      "weight": 1,
+      "product_detail": 5900766000076,
+      "user": 1,
+      "updated_at": "2022-11-20"
+    }
+  },
+  {
+    "model": "rest.usage",
+    "pk": 2,
+    "fields": {
+      "coefficient": 1.5,
+      "weight": 1,
+      "product_detail": 5900820000042,
+      "user": 1,
+      "updated_at": "2022-11-20"
+    }
+  },
+  {
+    "model": "rest.usage",
+    "pk": 3,
+    "fields": {
+      "coefficient": 0.5,
+      "weight": 1,
+      "product_detail": 5900197000034,
+      "user": 1,
+      "updated_at": "2022-11-20"
+    }
+  },
+  {
+    "model": "rest.usage",
+    "pk": 4,
+    "fields": {
+      "coefficient": 0.73,
+      "weight": 1,
+      "product_detail": 5902901001269,
+      "user": 1,
+      "updated_at": "2022-11-20"
+    }
+  }
+]

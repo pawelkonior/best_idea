@@ -1,20 +1,63 @@
+import datetime
+
+from django.db.models import Sum, F
+from django.shortcuts import get_object_or_404
+from math import floor
 from rest_framework.generics import ListAPIView
+from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from django.core.exceptions import ValidationError
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from .serializers import ProductSerializer, ProductDetailSerializer
-from .models import Product, ProductDetail
-from .utils import get_product_by_barcode
+from .models import Product, ProductDetail, Usage
+from .utils import get_product_by_barcode, update_usage
 
 
-class ProductListAPIView(ListAPIView):
+class ProductViewSet(ModelViewSet):
     serializer_class = ProductSerializer
+    model = Product
 
     def get_queryset(self):
-        return Product.objects.filter(user=self.request.user, used=False, to_sell=False)
+        return self.model.objects.filter(user=self.request.user)
+
+    def update_usage(self, request):
+        if "amount" not in request.data:
+            return
+        product = self.get_object()
+
+        amount_change = product.amount - request.data["amount"]
+        if amount_change < 0:
+            return
+
+        time_delta = datetime.date.today() - product.updated_at
+        usage, created = Usage.objects.get_or_create(user=self.request.user, product_detail=product.detail)
+
+        update_usage(usage, time_delta, amount_change)
+
+    def update(self, request, *args, **kwargs):
+        self.update_usage(request)
+        return super().update(request, *args, **kwargs)
+
+    def partial_update(self, request, *args, **kwargs):
+        self.update_usage(request)
+        return super().partial_update(request, *args, **kwargs)
+
+    def create(self, *args, **kwargs):
+        detail = get_object_or_404(ProductDetail, pk=self.request.data["product_id"])
+
+        serializer = self.serializer_class(data=self.request.data)
+        serializer.is_valid(raise_exception=True)
+        product = serializer.save(detail=detail, user=self.request.user)
+
+        return Response(self.serializer_class(product).data)
 
 
 class BarcodeAPIView(APIView):
+
+    @method_decorator(cache_page(60 * 60 * 24))
     def get(self, request, barcode):
 
         try:
@@ -23,7 +66,39 @@ class BarcodeAPIView(APIView):
         except ProductDetail.DoesNotExist:
             product = get_product_by_barcode(barcode)
             if product is not None:
-                return Response(product, status=status.HTTP_200_OK)
+
+                try:
+                    new_barcode = ProductDetail(
+                        id=barcode,
+                        image=product["image"],
+                        name=product["name"],
+                        price=''.join(char for char in product["price"]
+                                      if char.isdigit() or char == ',').replace(',', '.')
+                    )
+                    new_barcode.save()
+                except ValidationError:
+                    pass
+                finally:
+                    return Response(product, status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+
+class ShopProductView(ListAPIView):
+
+    def list(self, request, *args, **kwargs):
+        amounts = Product.objects.filter(user=self.request.user).values("detail").annotate(total=Sum("amount"))
+        total_amounts = {record["detail"]: record["total"] for record in amounts}
+        details = ProductDetail.objects.filter(id__in=total_amounts.keys()).values("id", "name", "image")
+
+        usages = Usage.objects.filter(user=self.request.user).values("coefficient", "product_detail") \
+            .annotate(estimated_usage=Sum(F("coefficient") * self.request.user.shopping_frequency))
+        estimated_usages = {record["product_detail"]: record["estimated_usage"] for record in usages}
+
+        for detail in details:
+            id_ = detail["id"]
+            detail["amount"] = -(floor(total_amounts[id_] - estimated_usages.get(id_, 0.25)))
+
+        details = [detail for detail in details if detail["amount"] > 0]
+
+        return Response(details)
