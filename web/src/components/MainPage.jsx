@@ -1,15 +1,33 @@
 import "../partials/Card.scss";
 
-import salata from "../assets/salata.png";
-import timer from "../assets/timer.svg";
-
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Card from "./Card";
 import {Link} from "react-router-dom";
 
-
 function MainView() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        handleDataFromAPI({endpoint: "products"})
+            .then((data) => {
+                console.log(data);
+                setProducts(data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    }, []);
+
+    const cards = products.map(({id, expiration_date, detail: {image, name}}) => (
+        <Card
+            expiration_date={expiration_date}
+            src={image}
+            name={name}
+            key={id}
+        />)
+    )
     return (
         <>
             <NavBar/>
@@ -20,24 +38,8 @@ function MainView() {
                     <button className="add-button">+</button>
                 </Link>
             </div>
-            <div className="product-card">
-                <div>
-                    <img
-                        className="product-image"
-                        src={salata}
-                        alt="Sałata"
-                    />
-                </div>
-                <div className="product-info">
-                    <div className="product-name">Sałata</div>
-                    <div className="product-subtext">
-                        <img src={timer} alt="" className="subtext-icon"/>
-                        <span className="subtext-text">
-                            Koniec przydatności: 5 dni
-                        </span>
-                    </div>
-                </div>
-            </div>
+            {cards}
+            <AddProduct/>
             <Footer/>
         </>
     );
