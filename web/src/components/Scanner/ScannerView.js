@@ -3,6 +3,7 @@ import "../../partials/MainPage.scss";
 import Scanner from './Scanner';
 import NavBar from "../NavBar";
 import Footer from "../Footer";
+import {handleDataFromAPI} from "../../request";
 
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxNTAwOTUyLCJpYXQiOjE2Njg5MDg5NTIsImp0aSI6IjJjM2Y2NDE2YzJlZTQ2YTRiNjQ1OTlhODY1YWVkYjgwIiwidXNlcl9pZCI6MX0.1pxGdWVV2B9xlOgY7u4YZbUBjSmucHYJqsKIhhyCp3E");
@@ -24,7 +25,7 @@ const ScannerView = () => {
     useEffect(() => {
         console.log(results)
         if (results[0] !== undefined) {
-            fetch(`http://0.0.0.0:8000/api/v1/barcode/${results[0]}`, requestOptions)
+            handleDataFromAPI({endpoint: `barcode/${results[0]}`})
                 .then((response) => response.json())
                 .then((data) => {
                     setProduct(data)
@@ -57,7 +58,7 @@ const ScannerView = () => {
                         border: '0px solid green',
                     }} width="640" height="300"/>
                     {scanning ? <Scanner scannerRef={scannerRef}
-                                         onDetected={(result) => setResults([...results, result])}/> : null}
+                                         onDetected={(result) => setResults([result])}/> : null}
                 </div>
             </div>
 
