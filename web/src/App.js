@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
-import MainView from "./components/MainPage.jsx";
-import SearchView from "./components/SearchView.jsx";
+import MainView from "./components/MainPage";
+import ScannerView from "./components/Scanner/ScannerView";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
         <>
             <Routes>
                 <Route path={"/"} element={<MainView />} />
-                <Route path={"/search"} element={<SearchView />} />
+                <Route path={"/scan"} element={<ScannerView/>}/>
             </Routes>
         </>
     );
