@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {SafeAreaView, SectionList, StyleSheet, Text, View} from "react-native";
 import {Link} from "@react-navigation/native";
 
@@ -7,6 +7,7 @@ import ProductsContext from "../context/useProducts";
 import ProductItem from "../components/ProductItem";
 import {StatusBar} from "expo-status-bar";
 import styles from "../styles/sharedStyles.js";
+import {AxiosContext} from "../context/AxiosContext";
 
 
 function HeaderComponent() {
@@ -20,7 +21,18 @@ function HeaderComponent() {
 }
 
 function Home(props) {
-    const {products} = useContext(ProductsContext);
+    const axiosContext = useContext(AxiosContext);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        axiosContext.authAxios.get('/products')
+            .then((response) => {
+                setProducts(response.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, []);
 
     return (
         <SafeAreaView style={styles.mainContainer}>
@@ -37,17 +49,18 @@ function Home(props) {
                 {/*    />*/}
                 {/*</List.Section>*/}
 
-                <SectionList
-                    sections={products}
-                    renderItem={({item}) => <ProductItem {...item}/>}
-                    renderSectionHeader={({section: {title}}) => (
-                        <Text style={styles.header}>{title}</Text>
-                    )}
-                    keyExtractor={(item) => item.id}
-                    stickySectionHeadersEnabled={true}
-                    ItemSeparatorComponent={SeparatorComponent}
-                    ListHeaderComponent={HeaderComponent}
-                />
+                {/*<SectionList*/}
+                {/*    sections={products}*/}
+                {/*    renderItem={({item}) => <ProductItem {...item}/>}*/}
+                {/*    renderSectionHeader={({section: {title}}) => (*/}
+                {/*        <Text style={styles.header}>{title}</Text>*/}
+                {/*    )}*/}
+                {/*    keyExtractor={(item) => item.id}*/}
+                {/*    stickySectionHeadersEnabled={true}*/}
+                {/*    ItemSeparatorComponent={SeparatorComponent}*/}
+                {/*    ListHeaderComponent={HeaderComponent}*/}
+                {/*/>*/}
+                <Text>Home</Text>
             </View>
         </SafeAreaView>
     );
