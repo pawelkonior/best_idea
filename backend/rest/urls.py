@@ -1,12 +1,13 @@
 from django.urls import path
 from rest_framework import routers
-from .views import ProductViewSet, BarcodeAPIView
+from .views import ProductViewSet, BarcodeAPIView, AvailableProductInMarketplaceViewSet
 
 router = routers.SimpleRouter()
 router.register("products", ProductViewSet, basename="product")
 
 urlpatterns = [
     path('barcode/<str:barcode>', BarcodeAPIView.as_view()),
+    path('available/', AvailableProductInMarketplaceViewSet.as_view()),
 ]
 
 urlpatterns += router.urls

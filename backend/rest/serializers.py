@@ -30,7 +30,7 @@ class UsageSerializer(serializers.ModelSerializer):
 class ProductToBuySerializer(serializers.ModelSerializer):
     name = serializers.StringRelatedField(many=False)
     image = serializers.StringRelatedField(many=False)
-    product_id = serializers.Field(source="product")
+    product_id = serializers.CharField(source='product.id', read_only=True)
 
     class Meta:
         model = ProductToBuy
