@@ -3,20 +3,19 @@
 .header {
     display: flex;
     flex-direction: row;
-    padding: 0 1rem 1rem 1rem;
     justify-content: space-between;
     align-items: flex-end;
-
     font-size: 18px;
     font-weight: 500;
+    padding: 0 1rem 1rem 1rem;
 
     .add-button {
         height: 42px;
         width: 113px;
-        background: #00966a;
-        border-radius: 13.2343px;
+        background: $color-main;
+        border-radius: 13px;
         border: 0;
-        color: #ffffff;
+        color: $white;
         font-size: 20px;
         font-weight: bold;
     }
@@ -26,9 +25,7 @@
 
 .product-card {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background: #ffffff;
+    background: $white;
     border: 1px solid rgba(0, 150, 106, 0.15);
     border-radius: 12px;
     margin-inline: 16px;
@@ -38,32 +35,30 @@
     .product-image {
         width: 96px;
         height: 62px;
-        border: 1px solid black;
+        border: 1px solid $gray-cement-light;
         border-radius: 8px;
-        /* Inside auto layout */
     }
     .product-info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        //padding: 0.5rem;
         margin-left: 1rem;
+
         .product-name {
-            justify-content: flex-start;
-            font-size: 16px;
-
-
-            color: #000000;
-
+            font-weight: 400;
         }
-        .product-subtext {
-            align-items: flex-start;
 
+        .product-subtext {
             display: flex;
             font-size: 12px;
             margin-top: 0.5rem;
-
             color: $gray-cement;
         }
     }
+}
+
+
+.subtext-icon {
+    padding-right: 0.25rem;
+}
+
+.subtext-text {
+
 }
