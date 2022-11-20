@@ -1,27 +1,27 @@
 import "../partials/Card.scss";
 
-import salata from "../assets/salata.png";
 import timer from "../assets/timer.svg";
 
 
-function Card() {
+function Card({expiration_date, src, name}) {
+    const expires_in = Math.ceil((new Date(expiration_date) - new Date()) / (1000 * 3600 * 24));
+    const days = expires_in === 1 ? "dzień" : "dni"
     return (
         <>
-
             <div className="product-card">
                 <div>
                     <img
                         className="product-image"
-                        src={salata}
-                        alt="Sałata"
+                        src={src}
+                        alt={name}
                     />
                 </div>
                 <div className="product-info">
-                    <div className="product-name">Sałata</div>
+                    <div className="product-name">{name}</div>
                     <div className="product-subtext">
                         <img src={timer} alt="" className="subtext-icon"/>
                         <span className="subtext-text">
-                            Koniec przydatności: 5 dni
+                            {`Koniec przydatności: ${expires_in} ${days}`}
                         </span>
                     </div>
                 </div>
