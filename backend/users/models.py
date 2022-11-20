@@ -3,9 +3,9 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
-    longitude = models.FloatField()
-    latitude = models.FloatField()
-    shopping_frequency = models.PositiveSmallIntegerField()
+    longitude = models.FloatField(default=0)
+    latitude = models.FloatField(default=0)
+    shopping_frequency = models.PositiveSmallIntegerField(default=3)
     avatar = models.URLField(
         default='https://slack-infra-latency.slack.com/avatarsource/TL513E005-UKTJEKSKD-7286d596ec95-128')
 
