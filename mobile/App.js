@@ -15,7 +15,7 @@ import Notifications from "./views/Notifications";
 import {useEffect, useRef, useState} from "react";
 
 import registerNNPushToken from 'native-notify';
-
+import {ProductsProvider} from "./context/useProducts";
 
 
 const Stack = createNativeStackNavigator();
@@ -28,40 +28,42 @@ export default function App() {
     const responseListener = useRef();
 
     return (
-        <PaperProvider>
-            <StatusBar style="auto"/>
-            <NavigationContainer>
-                <Stack.Navigator>
-                    <Stack.Screen
-                        name="Home"
-                        component={Home}
-                        options={{
-                            headerTitle: "Still Good AI",
-                            headerRight: () => (
-                                <>
-                                    <Link to={{screen: 'Maps'}}>
-                                        <AntDesign name="filter" size={24} color="black"/>
-                                    </Link>
+        <ProductsProvider>
+            <PaperProvider>
+                <StatusBar style="auto"/>
+                <NavigationContainer>
+                    <Stack.Navigator>
+                        <Stack.Screen
+                            name="Home"
+                            component={Home}
+                            options={{
+                                headerTitle: "Still Good AI",
+                                headerRight: () => (
+                                    <>
+                                        <Link to={{screen: 'Maps'}}>
+                                            <AntDesign name="filter" size={24} color="black"/>
+                                        </Link>
 
-                                    <Link to={{screen: "Profile"}}>
-                                        <Avatar.Text size={24} label="DM"/>
+                                        <Link to={{screen: "Profile"}}>
+                                            <Avatar.Text size={24} label="DM"/>
+                                        </Link>
+                                    </>
+                                ),
+                                headerLeft: () => (
+                                    <Link to={{screen: "Notifications"}}>
+                                        <Feather name="bell" size={24} color="gray"/>
                                     </Link>
-                                </>
-                            ),
-                            headerLeft: () => (
-                                <Link to={{screen: "Notifications"}}>
-                                    <Feather name="bell" size={24} color="gray"/>
-                                </Link>
-                            ),
-                        }}
-                    />
-                    <Stack.Screen name="Profile" component={Profile}/>
-                    <Stack.Screen name="Scanner" component={Scanner}/>
-                    <Stack.Screen name="Maps" component={Maps}/>
-                    <Stack.Screen name="Notifications" component={Notifications}/>
+                                ),
+                            }}
+                        />
+                        <Stack.Screen name="Profile" component={Profile}/>
+                        <Stack.Screen name="Scanner" component={Scanner}/>
+                        <Stack.Screen name="Maps" component={Maps}/>
+                        <Stack.Screen name="Notifications" component={Notifications}/>
 
-                </Stack.Navigator>
-            </NavigationContainer>
-        </PaperProvider>
+                    </Stack.Navigator>
+                </NavigationContainer>
+            </PaperProvider>
+        </ProductsProvider>
     );
 }

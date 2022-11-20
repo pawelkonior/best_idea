@@ -6,15 +6,18 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "api": "json-server --watch json-server/db.json --port 3001"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@miblanchard/react-native-slider": "^2.1.0",
     "@react-native-masked-view/masked-view": "^0.2.8",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
     "@react-navigation/stack": "^6.3.4",
     "expo": "~47.0.6",
+    "expo-image-picker": "~14.0.1",
     "expo-barcode-scanner": "~12.0.0",
     "expo-device": "~5.0.0",
     "expo-location": "~15.0.1",
