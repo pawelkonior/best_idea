@@ -1,0 +1,23 @@
+.camera__enable {
+  margin: 0 auto;
+  color: white;
+}
+
+.cameraHandler__message {
+  padding: 0 20px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.cameraHandler__messageIcon {
+  font-size: 40px;
+  padding-top: 15px;
+}
+
+.cameraHandler__unsopported {
+  display: flex;
+  height: 250px;
+  align-items: center;
+  text-align: center;
+}
