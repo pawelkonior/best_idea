@@ -5,7 +5,6 @@ export async function handleDataFromAPI(
         body,
     } = {}) {
 
-    console.log(endpoint)
     const options = {
         method,
         headers: {
@@ -18,14 +17,11 @@ export async function handleDataFromAPI(
         options["data"] = JSON.stringify(body);
     }
 
-    const response = await fetch(`http://0.0.0.0:8000/api/v1/${endpoint}`, options);
+    const response = await fetch(`http://188.68.231.214:8000/api/v1/${endpoint}`, options);
 
     if (response.status === 401) {
         throw new Error("User is not logged in");
     }
-    console.log(response)
-
     const data = await response.json()
-    console.log("Data", data)
     return data
 }
