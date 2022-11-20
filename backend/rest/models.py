@@ -2,6 +2,12 @@ from django.db import models
 
 
 class Product(models.Model):
+    class LocationChoices(models.TextChoices):
+        BASEMENT = "Basement", "Basement"
+        CUPBOARD = "Cupboard", "Cupboard"
+        FREEZER = "Freezer", "Freezer"
+        FRIDGE = "Fridge", "Fridge"
+
     expiration_date = models.DateField(null=False)
     amount = models.PositiveSmallIntegerField(default=1)
 
@@ -14,6 +20,7 @@ class Product(models.Model):
 
     user = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
     detail = models.ForeignKey("rest.ProductDetail", on_delete=models.DO_NOTHING)
+    location = models.CharField(max_length=10, choices=LocationChoices.choices, default=LocationChoices.FRIDGE)
 
     class Meta:
         unique_together = ("user", "detail", "expiration_date")
