@@ -1,4 +1,5 @@
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MaxValueValidator
 from django.db import models
 
 
@@ -12,4 +13,5 @@ class CustomUser(AbstractUser):
     owns_composter = models.BooleanField(default=False)
     accepts_compost = models.BooleanField(default=False)
     composter_capacity = models.PositiveSmallIntegerField(default=0)
-    composter_utilization = models.PositiveSmallIntegerField(default=0)
+    composter_percentage_utilization = models.PositiveSmallIntegerField(default=0, validators=[MaxValueValidator(100)])
+    search_distance_in_meters = models.PositiveSmallIntegerField(default=500)

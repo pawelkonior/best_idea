@@ -8,4 +8,4 @@ class CustomUserAdmin(UserAdmin):
     model = models.CustomUser
 
 
-admin.site.register(models.CustomUser, CustomUserAdmin)
+admin.site.register(models.CustomUser)
