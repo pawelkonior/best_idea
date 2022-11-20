@@ -1,10 +1,15 @@
-import salata from "../../assets/salata.png";
-import timer from "../../assets/timer.svg";
-import "./MainPage.scss";
+import "../partials/MainPage.scss";
+
+import salata from "../assets/salata.png";
+import timer from "../assets/timer.svg";
+
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 function MainView() {
     return (
         <>
+            <NavBar/>
             <div className="header">
                 <div className="header-subtext">Twoje produkty</div>
                 <button className="add-button">+</button>
@@ -15,17 +20,19 @@ function MainView() {
                         className="product-image"
                         src={salata}
                         alt="Sałata"
-                    ></img>
+                    />
                 </div>
                 <div className="product-info">
                     <div className="product-name">Sałata</div>
                     <div className="product-subtext">
-                        <a className="icon" src={timer} alt="Zegar">
+                        <img src={timer} alt="" className="subtext-icon"/>
+                        <span className="subtext-text">
                             Koniec przydatności: 5 dni
-                        </a>
+                        </span>
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

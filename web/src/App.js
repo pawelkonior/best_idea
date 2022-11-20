@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import MainView from "./components/MainView/MainPage.jsx";
 
-import SearchView from "./components/SearchView/SearchView.jsx";
+import MainView from "./components/MainPage.jsx";
+import SearchView from "./components/SearchView.jsx";
+
 
 function App() {
     return (

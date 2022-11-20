@@ -1,13 +1,18 @@
+@import './variables';
+
 .header {
     display: flex;
     flex-direction: row;
-    padding: 5rem 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
     justify-content: space-between;
     align-items: flex-end;
 
+    font-size: 18px;
+    font-weight: 500;
+
     .add-button {
-        height: 27px;
-        width: 63px;
+        height: 42px;
+        width: 113px;
         background: #00966a;
         border-radius: 13.2343px;
         border: 0;
@@ -41,29 +46,24 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0.5rem;
+        //padding: 0.5rem;
+        margin-left: 1rem;
         .product-name {
             justify-content: flex-start;
             font-size: 16px;
 
-            /* identical to box height, or 144% */
 
             color: #000000;
 
-            /* Inside auto layout */
         }
         .product-subtext {
             align-items: flex-start;
 
-            display: flexbox;
+            display: flex;
             font-size: 12px;
-            margin-top: 4px;
-            /* identical to box heig
-            ht */
+            margin-top: 0.5rem;
 
-            /* grey text */
-
-            color: #9a9ea6;
+            color: $gray-cement;
         }
     }
 }
