@@ -18,6 +18,7 @@ bs4 = "*"
 lxml = "*"
 django-redis = "==5.2.0"
 redis = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
