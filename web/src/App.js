@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import MainView from "./components/views/MainPage";
+import MainView from "./components/MainView/MainPage.jsx";
 
 function App() {
     return (
