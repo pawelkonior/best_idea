@@ -1,12 +1,11 @@
-import React, {useState} from "react";
-import {View, StyleSheet, Pressable, Image} from "react-native";
-import {Avatar, List, TextInput, Text} from "react-native-paper";
+import React, { useState } from "react";
+import { View, StyleSheet, Pressable, Image } from "react-native";
+import { Avatar, List, Text } from "react-native-paper";
 
-import {Slider} from "@miblanchard/react-native-slider";
+import { Slider } from "@miblanchard/react-native-slider";
 import * as ImagePicker from "expo-image-picker";
 
 function Profile(props) {
-    const [name, setName] = useState("");
     const [value, setValue] = useState(0.2);
     const [image, setImage] = useState("");
 
@@ -17,10 +16,6 @@ function Profile(props) {
             aspect: [4, 3],
             quality: 1,
         });
-
-        console.log("----dd--------");
-        console.log(result.assets[0].uri);
-        console.log("-----asd-------");
 
         if (!result.canceled) {
             setImage(result.assets[0].uri);
@@ -37,27 +32,14 @@ function Profile(props) {
                     {!image ? (
                         <>
                             {console.log(image)}
-                            <Avatar.Text size={60} label="DM"/>
+                            <Avatar.Text size={120} label="DM" />
                         </>
                     ) : (
                         <>
-                            <Avatar.Image
-                                size={60}
-                                source={{uri: image}}
-                                style={{width: 200, height: 200}}
-                            />
+                            <Avatar.Image size={120} source={{ uri: image }} />
                         </>
                     )}
                 </Pressable>
-                {/* {image && (
-                    console.log('------------');
-                    console.log(image);
-                    console.log('------------');
-                    <Image
-                        source={{ uri: image }}
-                        style={{ width: 200, height: 200 }}
-                    />
-                )} */}
             </View>
             <View style={styles.nameText}>
                 <Text variant="headlineLarge">Dominika</Text>
@@ -67,10 +49,6 @@ function Profile(props) {
             </View>
             <View style={styles.userInfo}>
                 <List.Section>
-                    <List.Subheader>
-                        Informacje o Tobie (opcjonalnie)
-                    </List.Subheader>
-
                     <View style={styles.sliderComponent}>
                         <List.Item
                             title={`Zasięg powiadomień: ${value}m `}
