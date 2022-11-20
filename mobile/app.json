@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "mobile",
+    "jsEngine": "hermes",
     "slug": "mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -34,5 +35,5 @@
         "projectId": "dc6ce840-1842-4618-9d59-2b91e69e3184"
       }
     }
-  }
+}
 }
