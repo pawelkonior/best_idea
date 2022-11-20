@@ -210,3 +210,5 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
 }
+
+CORS_ORIGIN_ALLOW_ALL = DEBUG
