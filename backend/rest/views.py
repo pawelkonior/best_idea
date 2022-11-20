@@ -28,7 +28,7 @@ class ProductViewSet(ModelViewSet):
     model = Product
 
     def get_queryset(self):
-        return self.model.objects.filter(user=self.request.user.id)
+        return self.model.objects.filter(user=self.request.user.id).order_by("expiration_date")
 
     def update_usage(self, request):
         if "amount" not in request.data:

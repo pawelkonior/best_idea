@@ -7,6 +7,7 @@ import AddProduct from "./AddProduct";
 import {useEffect, useState} from "react";
 import {handleDataFromAPI} from "../request";
 
+
 function MainView() {
     const [products, setProducts] = useState([]);
 
@@ -31,12 +32,14 @@ function MainView() {
         />)
     )
     return (
-        <>
+        <div style={{overflowY: "hidden"}}>
             <NavBar/>
             <AddProduct/>
-            {cards}
+            <div style={{overflowY: "scroll"}}>
+                {cards}
+            </div>
             <Footer/>
-        </>
+        </div>
     );
 }
 

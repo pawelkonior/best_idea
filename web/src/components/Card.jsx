@@ -4,11 +4,10 @@ import timer from "../assets/timer.svg";
 
 
 function Card({expiration_date, src, name}) {
-    const expires_in = Math.ceil((expiration_date.getTime() - new Date()) / (1000 * 3600 * 24));
+    const expires_in = Math.ceil((new Date(expiration_date) - new Date()) / (1000 * 3600 * 24));
     const days = expires_in === 1 ? "dzień" : "dni"
     return (
         <>
-
             <div className="product-card">
                 <div>
                     <img
