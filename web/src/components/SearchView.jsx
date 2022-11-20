@@ -1,4 +1,6 @@
 import NavBar from "./NavBar";
+import Footer from "./Footer";
+
 
 import "../partials/SearchView.scss"
 import searchIcon from "../assets/images/search_icon.svg"
@@ -14,6 +16,7 @@ function SearchView(){
                     <img src={searchIcon} alt=""/>
                 </button>
             </div>
+            <Footer/>
         </>
     )
 }
