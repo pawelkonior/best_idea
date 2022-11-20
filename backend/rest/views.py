@@ -1,6 +1,9 @@
 import datetime
 
+from django.db.models import Sum, F
 from django.shortcuts import get_object_or_404
+from math import floor
+from rest_framework.generics import ListAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -79,3 +82,23 @@ class BarcodeAPIView(APIView):
                     return Response(product, status=status.HTTP_200_OK)
 
         return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+class ShopProductView(ListAPIView):
+
+    def list(self, request, *args, **kwargs):
+        amounts = Product.objects.filter(user=self.request.user).values("detail").annotate(total=Sum("amount"))
+        total_amounts = {record["detail"]: record["total"] for record in amounts}
+        details = ProductDetail.objects.filter(id__in=total_amounts.keys()).values("id", "name", "image")
+
+        usages = Usage.objects.filter(user=self.request.user).values("coefficient", "product_detail") \
+            .annotate(estimated_usage=Sum(F("coefficient") * self.request.user.shopping_frequency))
+        estimated_usages = {record["product_detail"]: record["estimated_usage"] for record in usages}
+
+        for detail in details:
+            id_ = detail["id"]
+            detail["amount"] = -(floor(total_amounts[id_] - estimated_usages[id_]))
+
+        details = [detail for detail in details if detail["amount"] > 0]
+
+        return Response(details)
