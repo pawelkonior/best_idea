@@ -1,12 +1,11 @@
 @import "variables";
 
 .navbar {
-  padding: 16px;
+  padding: 16px 16px 0 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-
 
   &__header {
     font-size: 28px;
@@ -17,6 +16,7 @@
 
   }
 }
+
 
 .header__paragraph {
   color: $color-main;

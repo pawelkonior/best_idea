@@ -1,0 +1,41 @@
+@import './variables';
+
+.product-card {
+    display: flex;
+    background: $white;
+    border: 1px solid rgba(0, 150, 106, 0.15);
+    border-radius: 12px;
+    margin-inline: 16px;
+    margin-top: 20px;
+    padding: 20px;
+
+    .product-image {
+        width: 96px;
+        height: 62px;
+        border: 1px solid $gray-cement-light;
+        border-radius: 8px;
+    }
+    .product-info {
+        margin-left: 1rem;
+
+        .product-name {
+            font-weight: 400;
+        }
+
+        .product-subtext {
+            display: flex;
+            font-size: 12px;
+            margin-top: 0.5rem;
+            color: $gray-cement;
+        }
+    }
+}
+
+
+.subtext-icon {
+    padding-right: 0.25rem;
+}
+
+.subtext-text {
+
+}

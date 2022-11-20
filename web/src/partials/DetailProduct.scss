@@ -1,6 +1,6 @@
 .details-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 28px;
@@ -13,5 +13,23 @@
     }
 
     .details-title {
+        padding: 1rem;
+        font-weight: 500;
+    }
+
+    .btn-wrapper {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        .message-button {
+            height: 52px;
+            margin: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            background: #00966a;
+            border-radius: 8.82px;
+            border: 0;
+        }
     }
 }

@@ -3,11 +3,15 @@ import DetailProduct from "./components/DetailProduct";
 
 import SearchView from "./components/SearchView";
 
+import MainView from "./components/MainPage.jsx";
+
 function App() {
     return (
         <>
             <Routes>
-                <Route path={"/"} element={<DetailProduct />} />
+                <Route path={"/"} element={<MainView />} />
+
+                <Route path={"/detail"} element={<DetailProduct />} />
                 <Route path={"/search"} element={<SearchView />} />
             </Routes>
         </>
