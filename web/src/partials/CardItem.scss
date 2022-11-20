@@ -1,14 +1,17 @@
 @import './variables';
 
-.details-container {
-  //margin-top: 100px;
+.details-containerr {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 32px;
+  padding: 20px;
+  margin: 12px;
 
-  .image-details {
+  border: 1px solid rgba(0, 150, 106, 0.5);
+  border-radius: 8px;
+
+  .image-detailss {
     width: 100%;
     height: 175px;
     border: 1px solid black;
@@ -17,7 +20,7 @@
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
   }
 
-  .details-title {
+  .details-titlee {
     font-size: 20px;
     padding: 1.5rem 0  1rem 0;
     font-weight: 600;
@@ -135,7 +138,6 @@
   font-weight: 400;
   font-size: 15px;
   color: $gray-cement;
-  margin-left: -5%;
 }
 
 .people-text-outer {
@@ -144,26 +146,20 @@
   font-weight: 500;
   font-size: 18px;
   color: $gray-cement;
-  //margin-left: -5%;
 }
 
-.user-wrapper {
+.user-wrapperr {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 5%;
-  margin-bottom: 36px;
-  height: 45px;
-
+  flex-direction: row-reverse;
+  margin-left: 55px;
+  align-items: flex-start;
 }
 
-.circle-avatar {
+.circle-avatarr {
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  margin-left: -5%;
   background-color: #FFE9A8;
-  margin-right: 15px;
 
   background-image: url("../assets/images/peoples/people-avatar.svg");
   background-position: center;
@@ -179,9 +175,9 @@
   flex-direction: column;
 }
 
-.name-wrapper {
+.name-wrapperr {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
 }
 
@@ -196,21 +192,44 @@
   font-style: normal;
 }
 
-.user-text {
+.user-textt {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: $color-main;
-  font-size: 16px;
-  margin-top: 5px;
+  color: $gray-cement;
+  font-size: 12px;
+  display: flex;
+  //align-items: center;
+  //width: 100%;
+  //margin-top: 5px;
+}
 
+.user-textt {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $gray-cement;
+  font-size: 14px;
+  display: flex;
 
 }
+
 
 .circle-verified {
   height: 20px;
   width: 20px;
-  //margin-left: -5%;
   border: 0;
   background-color: transparent;
+}
+
+.pojemnoscc {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.info_wrapperr {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
