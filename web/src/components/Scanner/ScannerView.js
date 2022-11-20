@@ -29,9 +29,9 @@ const ScannerView = () => {
     useEffect(() => {
         if (results[0] !== undefined) {
             handleDataFromAPI({endpoint: `barcode/${results[0]}`})
-                .then((response) => response.json())
                 .then((data) => {
                     setProduct(data);
+                    setScanning(false);
                 })
                 .catch((error) => console.log("error", error));
         }
