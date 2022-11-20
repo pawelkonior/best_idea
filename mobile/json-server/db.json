@@ -1,11 +1,20 @@
 {
-  "barcodes": [
+  "products": [
     {
-      "barcode": "123456789012",
-      "type": "EAN13",
-      "name": "Test",
-      "price": 1.99,
-      "id": 1
+      "id": 1,
+      "title": "owoce",
+      "data": [
+        {
+          "id": 3,
+          "barcode": 33,
+          "name": "ziemniaki"
+        },
+        {
+          "id": 4,
+          "barcode": 44,
+          "name": "marchewki"
+        }
+      ]
     }
   ]
 }
