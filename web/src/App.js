@@ -1,12 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import MainView from "./components/MainView/MainPage.jsx";
+
+import SearchView from "./components/SearchView/SearchView.jsx";
 
 function App() {
     return (
-        <div className="App">
-            <MainView />
-        </div>
+        <>
+            <Routes>
+                <Route path={"/"} element={<MainView />} />
+                <Route path={"/search"} element={<SearchView />} />
+            </Routes>
+        </>
     );
 }
 

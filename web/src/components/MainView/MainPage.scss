@@ -1,14 +1,21 @@
 .header {
     display: flex;
     flex-direction: row;
-    padding: 5rem 4rem 1rem 4rem;
+    padding: 5rem 1rem 1rem 1rem;
     justify-content: space-between;
+    align-items: flex-end;
 
     .add-button {
-        align-items: flex-start;
+        height: 27px;
+        width: 63px;
+        background: #00966a;
+        border-radius: 13.2343px;
+        border: 0;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
     }
     .header-subtext {
-        align-items: flex-end;
     }
 }
 
@@ -19,14 +26,15 @@
     background: #ffffff;
     border: 1px solid rgba(0, 150, 106, 0.15);
     border-radius: 12px;
-    width: 80%;
-    margin-left: 35px;
+    margin-inline: 16px;
     margin-top: 20px;
+    padding: 20px;
 
     .product-image {
         width: 96px;
         height: 62px;
-
+        border: 1px solid black;
+        border-radius: 8px;
         /* Inside auto layout */
     }
     .product-info {
@@ -49,6 +57,7 @@
 
             display: flexbox;
             font-size: 12px;
+            margin-top: 4px;
             /* identical to box heig
             ht */
 
