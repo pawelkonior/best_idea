@@ -60,3 +60,11 @@ class ProductToBuy(models.Model):
 
     def __str__(self):
         return f"{self.product.name} - Amount: {self.count}"
+
+
+class CompostedProduct(models.Model):
+    detail = models.ForeignKey(ProductDetail, on_delete=models.DO_NOTHING)
+    donated_to = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING)
+    # donated_by = models.ForeignKey("users.CustomUser", on_delete=models.DO_NOTHING, related_name="donated_compost")
+    accepted = models.BooleanField(null=True, blank=True)
+    updated_at = models.DateField(auto_now=True)

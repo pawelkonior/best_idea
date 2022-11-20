@@ -12,11 +12,11 @@ from config import settings
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Snippets API",
+        title="StillGoodAPI",
         default_version='v1',
-        description="Test description",
+        description="API for StillGoodAI application.",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="contact@snippets.local"),
+        contact=openapi.Contact(email="pawel.konior@gmail.com"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,
@@ -40,6 +40,6 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns.append(path('__debug__/', include('debug_toolbar.urls')))
 
-admin.site.site_title = "Brudek & Smordek AI"
-admin.site.site_header = "Brudek & Smordek AI"
-admin.site.index_title = "Brudek & Smordek AI"
+admin.site.site_title = "StillGoodAPI"
+admin.site.site_header = "StillGoodAPI"
+admin.site.index_title = "StillGoodAPI"
