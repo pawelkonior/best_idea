@@ -97,7 +97,7 @@ class ShopProductView(ListAPIView):
 
         for detail in details:
             id_ = detail["id"]
-            detail["amount"] = -(floor(total_amounts[id_] - estimated_usages[id_]))
+            detail["amount"] = -(floor(total_amounts[id_] - estimated_usages.get(id_, 0.25)))
 
         details = [detail for detail in details if detail["amount"] > 0]
 
